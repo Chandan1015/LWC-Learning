@@ -1,0 +1,52 @@
+<template>
+    <lightning-card title={title}>
+
+        <slot name="header"></slot>
+
+        <lightning-input type="search" label="Global Search"
+            onchange={handleSearch}></lightning-input>
+
+        <lightning-combobox
+            label="Filter Field"
+            options={fieldOptions}
+            onchange={handleFilterFieldChange}>
+        </lightning-combobox>
+
+        <lightning-input
+            label="Filter Value"
+            onchange={handleFilterValue}>
+        </lightning-input>
+
+        <template if:true={isLoading}>
+            <lightning-spinner></lightning-spinner>
+        </template>
+
+        <template if:true={error}>
+            <div class="slds-text-color_error">{error}</div>
+        </template>
+
+        <lightning-datatable
+            key-field="Id"
+            data={displayData}
+            columns={columns}
+            onsave={handleSave}
+            draft-values={draftValues}
+            onsort={handleSort}
+            sorted-by={sortedBy}
+            sorted-direction={sortedDirection}
+            onrowaction={handleRowAction}>
+        </lightning-datatable>
+
+        <template if:true={noRecords}>
+            <div>No records found</div>
+        </template>
+
+        <lightning-button label="Prev" onclick={prevPage}></lightning-button>
+        <lightning-button label="Next" onclick={nextPage}></lightning-button>
+
+        <lightning-button label="Export CSV" onclick={exportCSV}></lightning-button>
+
+        <slot name="footer"></slot>
+
+    </lightning-card>
+</template>

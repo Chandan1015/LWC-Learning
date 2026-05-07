@@ -1,0 +1,26 @@
+<template>
+    <lightning-card  title="Account Information">
+        <div class="slds-m-top_medium">
+            <lightning-input 
+                label="Account Name"
+                type="text"
+                value={accountName}
+                onchange={nameChangeHandler}>
+            </lightning-input>
+
+            <lightning-input 
+                label="Account Number"
+                type="text"
+                value={accountNumber}
+                onchange={accnumberChangeHandler}>
+            </lightning-input>
+
+            <lightning-input
+                label="Active"
+                type="checkbox"
+                checked={isActive}
+                onchange={activeChangeHandler}>
+            </lightning-input>
+        </div>
+    </lightning-card>
+</template>

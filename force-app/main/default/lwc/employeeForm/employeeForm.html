@@ -1,0 +1,83 @@
+<template>
+    <lightning-card  title="Employee Form">
+        <div class="slds-m-around_medium">
+            <lightning-icon 
+                icon-name="standard:employee" 
+                size="medium"
+                alternative-text="User Icon">
+            </lightning-icon>
+
+            <lightning-card  title="Account Information">
+                <div class="slds-m-top_medium">
+                    <lightning-input 
+                        label="Account Name"
+                        type="text"
+                        value={name}
+                        onchange={nameChangeHandler}>
+                    </lightning-input>
+
+                    <lightning-input 
+                        label="Account Number"
+                        type="text"
+                        value={accountNumber}
+                        onchange={accnumberChangeHandler}>
+                    </lightning-input>
+
+                    <lightning-input
+                        label="Active"
+                        type="checkbox"
+                        checked={isActive}
+                        onchange={activeChangeHandler}>
+                    </lightning-input>
+                </div>
+            </lightning-card>
+
+            <lightning-card  title="Contact Information">
+                <div class="sslds-m-top_medium">
+                    <lightning-input 
+                        label="Phone"
+                        type="text"
+                        value={phoneNumber}
+                        onchange={phnumberChangeHandler}>
+                    </lightning-input>
+                    <lightning-input
+                        label="Email"
+                        type="email"
+                        value={email}
+                        onchange={emailChangeHandler}>
+                    </lightning-input>
+                </div>
+            </lightning-card>
+
+            <lightning-card  title="Other Information">
+                <div class="slds-m-top_medium">
+
+                    <lightning-input
+                        label="Other Info"
+                        type="text"
+                        value={otherInfo}
+                        onchange={otherChangeHandler}>
+                    </lightning-input>
+                </div>
+            </lightning-card>
+
+            <lightning-button
+                label="Submit"
+                variant="brand"
+                onclick={submitHandler}
+                class="slds-m-top_medium">
+            </lightning-button>
+            <lightning-button
+                label="Create New"
+                variant="brand"
+                onclick={createNewHandler}
+                class="slds-m-top_medium">
+            </lightning-button>
+
+
+
+
+
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,19 @@
+<template>
+    <lightning-card  title="Contact Information">
+        <div class="sslds-m-top_medium">
+            <lightning-input 
+                label="Phone"
+                type="text"
+                value={phone}
+                onchange={phnumberChangeHandler}>
+            </lightning-input>
+
+            <lightning-input
+                label="Email"
+                type="email"
+                value={email}
+                onchange={emailChangeHandler}>
+            </lightning-input>
+        </div>
+    </lightning-card>
+</template>
