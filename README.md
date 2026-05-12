@@ -1,18 +1,34 @@
-# Salesforce DX Project: Next Steps
+Reusable Advanced Data Table (LWC)
+Overview
+A reusable Lightning Web Component (LWC) that dynamically displays data for any standard or custom object using configurable properties.
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+Features
+	• Dynamic object & field configuration
+	• Sorting, filtering, and global search
+	• Pagination (client + server-side)
+	• Inline editing (LDS)
+	• CSV export
+	• Loading, error, and empty states
 
-## How Do You Plan to Deploy Your Changes?
+Deployment
+sfdx force:auth:web:login -a myOrg
+sfdx force:source:deploy -p force-app
+sfdx force:org:open
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+Test Data
+insert new Account(Name='Test 1', Industry='IT');
+insert new Account(Name='Test 2', Industry='Finance');
 
-## Configure Your Salesforce DX Project
-
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
-
-## Read All About It
-
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+Usage
+	1. Open App Builder
+	2. Drag Reusable Data Table
+	3. Configure:
+	Object Name → Account  
+Fields → Id,Name,Industry,Phone
+	4. Save & Activate
+  
+Demo
+	• Search, filter, sort
+	• Inline edit
+	• Pagination
+Export CSV
